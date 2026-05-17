@@ -41,7 +41,7 @@
     .container {
       max-width: 1100px;
       margin: auto;
-      padding: 0 28px;
+      padding: 0 20px;
       position: relative;
       z-index: 1;
     }
@@ -274,9 +274,6 @@
 
     .photo-placeholder svg { width: 44px; height: 44px; opacity: 0.4; }
 
-    /* Add your photo: replace the SVG inside .photo-placeholder with:
-       <img src="sua-foto.jpg" style="width:100%;height:100%;object-fit:cover;"> */
-
     .profile-name {
       font-family: 'Cormorant Garamond', serif;
       font-size: 18px;
@@ -507,10 +504,100 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
+    /* ══ MOBILE: perfil ══ */
     @media (max-width: 680px) {
       .profile-layout { grid-template-columns: 1fr; }
       .profile-left { border-right: none; border-bottom: 1px solid var(--border); }
       .profile-right { padding: 24px 20px; }
+    }
+
+    /* ══ MOBILE: geral ══ */
+    @media (max-width: 768px) {
+
+      /* Header empilhado */
+      header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 14px;
+        padding: 20px 0;
+      }
+
+      /* Esconde a tagline do meio no mobile */
+      header small {
+        display: none;
+      }
+
+      /* Hero */
+      .hero {
+        padding: 70px 8px 60px;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: clamp(26px, 7.5vw, 38px);
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      /* Sections */
+      .section {
+        padding: 56px 0;
+      }
+
+      .section h2 {
+        font-size: 28px;
+        margin-bottom: 32px;
+      }
+
+      /* Grid força 1 coluna */
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* Tech stack */
+      .tech {
+        gap: 10px;
+        justify-content: center;
+      }
+
+      .tech span {
+        padding: 8px 16px;
+        font-size: 12px;
+      }
+
+      /* Botões de contato empilhados e centralizados */
+      .contact-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .contact-buttons .cta,
+      .contact-buttons .btn-secondary {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+        text-align: center;
+      }
+
+      /* Carousel ocupa a largura toda */
+      .team-carousel {
+        width: 100%;
+      }
+
+      /* Footer */
+      .footer {
+        padding: 28px 16px;
+      }
+
+      /* CTA do hero centralizado */
+      .hero .cta {
+        display: inline-block;
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -590,26 +677,25 @@
   </section>
 
   <!-- PROCESSO -->
-<section class="section">
-  <p class="section-label">Processo</p>
-  <h2>Como funciona</h2>
-  <div class="gold-line"></div>
-
-  <div class="grid">
-    <div class="card">
-      <strong>1. Diagnóstico</strong>
-      <p>Mapeamos seus dados, processos e gargalos.</p>
+  <section class="section">
+    <p class="section-label">Processo</p>
+    <h2>Como funciona</h2>
+    <div class="gold-line"></div>
+    <div class="grid">
+      <div class="card">
+        <strong>1. Diagnóstico</strong>
+        <p>Mapeamos seus dados, processos e gargalos.</p>
+      </div>
+      <div class="card">
+        <strong>2. Estruturação</strong>
+        <p>Criamos pipelines e organizamos a base.</p>
+      </div>
+      <div class="card">
+        <strong>3. Automação & BI</strong>
+        <p>Entregamos dashboards e fluxos automatizados.</p>
+      </div>
     </div>
-    <div class="card">
-      <strong>2. Estruturação</strong>
-      <p>Criamos pipelines e organizamos a base.</p>
-    </div>
-    <div class="card">
-      <strong>3. Automação & BI</strong>
-      <p>Entregamos dashboards e fluxos automatizados.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
   <!-- TECH -->
   <section class="section">
@@ -629,25 +715,24 @@
 
   <!-- Results -->
   <section class="section">
-  <p class="section-label">Resultados</p>
-  <h2>O impacto que geramos</h2>
-  <div class="gold-line"></div>
-
-  <div class="grid">
-    <div class="card">
-      <strong>Fim do Excel manual</strong>
-      <p>Relatórios automatizados e sempre atualizados.</p>
+    <p class="section-label">Resultados</p>
+    <h2>O impacto que geramos</h2>
+    <div class="gold-line"></div>
+    <div class="grid">
+      <div class="card">
+        <strong>Fim do Excel manual</strong>
+        <p>Relatórios automatizados e sempre atualizados.</p>
+      </div>
+      <div class="card">
+        <strong>Decisão em tempo real</strong>
+        <p>Você não espera mais dados — você age com eles.</p>
+      </div>
+      <div class="card">
+        <strong>Escala sem caos</strong>
+        <p>Sua operação cresce sem perder controle dos dados.</p>
+      </div>
     </div>
-    <div class="card">
-      <strong>Decisão em tempo real</strong>
-      <p>Você não espera mais dados — você age com eles.</p>
-    </div>
-    <div class="card">
-      <strong>Escala sem caos</strong>
-      <p>Sua operação cresce sem perder controle dos dados.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
   <!-- TEAM -->
   <section class="section">
@@ -666,18 +751,10 @@
               <!-- LEFT -->
               <div class="profile-left">
                 <div class="photo-placeholder">
-                    <img 
-                          src="tiago.jpg" 
-                          style="
-                            width:100%;
-                            height:100%;
-                            object-fit:cover;
-                            border-radius:50%;
-                          "
-                        >
-                    <circle cx="22" cy="16" r="9" stroke="#c9a84c" stroke-width="1.5"/>
-                    <path d="M4 40c0-9.94 8.06-18 18-18s18 8.06 18 18" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
-                  </svg>
+                  <img
+                    src="tiago.jpg"
+                    style="width:100%;height:100%;object-fit:cover;border-radius:50%;"
+                  >
                 </div>
 
                 <div class="profile-name">Tiago Marques<br>Pereira</div>
@@ -703,7 +780,7 @@
                   </div>
                   <div class="exp-item">
                     <span class="exp-company">ExamRoom.AI</span>
-                    <span class="exp-period">Analista de negócios em TI  · 2022 - 2023</span>
+                    <span class="exp-period">Analista de negócios em TI · 2022 – 2023</span>
                   </div>
                 </div>
               </div>
@@ -713,14 +790,13 @@
 
                 <div class="profile-bio">
                   <p>
-                   <strong>Empresas não precisam de mais dados, precisam de clareza. É isso que eu entrego.</strong><br><br>
+                    <strong>Empresas não precisam de mais dados, precisam de clareza. É isso que eu entrego.</strong><br><br>
 
-                        Sou <strong>Engenheiro de dados</strong> com atuação na interseção entre tecnologia e negócio, criando pipelines analíticos e soluções de BI que dão clareza para decisões estratégicas e crescimento sustentável.<br><br>
+                    Sou <strong>Engenheiro de dados</strong> com atuação na interseção entre tecnologia e negócio, criando pipelines analíticos e soluções de BI que dão clareza para decisões estratégicas e crescimento sustentável.<br><br>
 
-                        Tenho experiência prática com <strong>SQL, AWS e orquestração de dados</strong>, desenvolvendo processos eficientes de ETL/ELT, modelagem dimensional e automações com <strong>n8n</strong> — sempre focado em reduzir retrabalho e aumentar produtividade.<br><br>
+                    Tenho experiência prática com <strong>SQL, AWS e orquestração de dados</strong>, desenvolvendo processos eficientes de ETL/ELT, modelagem dimensional e automações com <strong>n8n</strong> — sempre focado em reduzir retrabalho e aumentar produtividade.<br><br>
 
-                        Meu background em Business Analysis me permite ir além do técnico: entendo o problema do negócio e construo soluções de dados que geram impacto real.<br><br>
-
+                    Meu background em Business Analysis me permite ir além do técnico: entendo o problema do negócio e construo soluções de dados que geram impacto real.
                   </p>
                 </div>
 
@@ -761,10 +837,11 @@
                   <div class="cert-group">
                     <div class="cert-group-title">Azure</div>
                     <div class="cert-list">
-                      <div class="cert-item pending">Em breve · Microsoft Certified:  Power BI Analista de Dados Associate</div>
-                      <div class="cert-item pending">Em breve · Microsoft Certified: Engenheiro de Dados Fabric AssociateEngenheiro de Dados Fabric Associate</div>
+                      <div class="cert-item pending">Em breve · Microsoft Certified: Power BI Analista de Dados Associate</div>
+                      <div class="cert-item pending">Em breve · Microsoft Certified: Engenheiro de Dados Fabric Associate</div>
                     </div>
                   </div>
+
                   <div class="cert-group">
                     <div class="cert-group-title">Outras</div>
                     <div class="cert-list">
