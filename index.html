@@ -400,6 +400,23 @@
     .cert-item.pending { opacity: 0.4; font-style: italic; }
     .cert-item.pending::before { background: var(--gold-dim); }
 
+
+  .cert-link {
+  text-decoration: none;
+  transition: 0.3s ease;
+  border-radius: 4px;
+  padding: 4px 0;
+}
+
+.cert-link:hover {
+  color: var(--gold-soft);
+  transform: translateX(4px);
+}
+
+.cert-link:hover::before {
+  background: var(--gold-soft);
+}
+
     /* NAV */
     .carousel-nav {
       display: flex;
@@ -832,40 +849,88 @@
                 </div>
 
                 <div class="certs-block">
-                  <div class="block-title">Certificações</div>
-
                   <div class="cert-group">
-                    <div class="cert-group-title">AWS</div>
-                    <div class="cert-list">
-                      <div class="cert-item">AWS Certified Cloud Practitioner</div>
-                      <div class="cert-item">AWS Certified Solutions Architect – Associate</div>
-                      <div class="cert-item">AWS Certified Data Engineer – Associate</div>
-                      <div class="cert-item">AWS Certified Machine Learning Engineer – Associate</div>
-                    </div>
-                  </div>
+                        <div class="cert-group">
+                          <div class="cert-group-title">AWS</div>
+                          <div class="cert-list">
 
-                  <div class="cert-group">
-                    <div class="cert-group-title">Databricks</div>
-                    <div class="cert-list">
-                      <div class="cert-item">Databricks Certified Data Engineer Associate</div>
-                    </div>
-                  </div>
+                            <a class="cert-item cert-link"
+                              href="https://www.credly.com/badges/996a3a9f-cd40-47a9-aaaa-91f90db0b5da/linked_in_profile"
+                              target="_blank" rel="noopener">
+                              AWS Certified Cloud Practitioner
+                            </a>
 
-                  <div class="cert-group">
-                    <div class="cert-group-title">Azure</div>
-                    <div class="cert-list">
-                      <div class="cert-item pending">Em breve · Microsoft Certified: Power BI Analista de Dados Associate</div>
-                      <div class="cert-item pending">Em breve · Microsoft Certified: Engenheiro de Dados Fabric Associate</div>
-                    </div>
-                  </div>
+                            <a class="cert-item cert-link"
+                              href="https://www.credly.com/badges/93957e54-85b9-4250-824e-5fcaeba1fc9f/linked_in_profile"
+                              target="_blank" rel="noopener">
+                              AWS Certified Solutions Architect – Associate
+                            </a>
 
-                  <div class="cert-group">
-                    <div class="cert-group-title">Outras</div>
-                    <div class="cert-list">
-                      <div class="cert-item">PCEP – Certified Entry-Level Python Programmer</div>
-                      <div class="cert-item">Certified Tester Foundation Level (CTFL)</div>
-                    </div>
-                  </div>
+                            <a class="cert-item cert-link"
+                              href="https://www.credly.com/badges/864224e6-18c7-453e-bd2e-f971b793edaa/linked_in_profile"
+                              target="_blank" rel="noopener">
+                              AWS Certified Data Engineer – Associate
+                            </a>
+
+                            <a class="cert-item cert-link"
+                              href="https://www.credly.com/badges/4afe9d9a-798c-4a20-8993-d8c4f750aec0/linked_in_profile"
+                              target="_blank" rel="noopener">
+                              AWS Certified Machine Learning Engineer – Associate
+                            </a>
+
+                            <a class="cert-item cert-link"
+                              href="https://www.credly.com/badges/0729fccb-aaa8-4ef9-9e64-84700c89f623/linked_in_profile"
+                              target="_blank" rel="noopener">
+                              AWS Certified AI Practitioner
+                            </a>
+
+                          </div>
+                        </div>
+
+                        <div class="cert-group">
+                          <div class="cert-group-title">Databricks</div>
+                          <div class="cert-list">
+
+                            <a class="cert-item cert-link"
+                              href="https://credentials.databricks.com/5561147e-bb5c-4a2a-be9b-2a349d35766d"
+                              target="_blank" rel="noopener">
+                              Databricks Certified Data Engineer Associate
+                            </a>
+
+                          </div>
+                        </div>
+
+                        <div class="cert-group">
+                          <div class="cert-group-title">Azure</div>
+                          <div class="cert-list">
+                            <div class="cert-item pending">
+                              Em breve · Microsoft Certified: Power BI Analista de Dados Associate
+                            </div>
+
+                            <div class="cert-item pending">
+                              Em breve · Microsoft Certified: Engenheiro de Dados Fabric Associate
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="cert-group">
+                          <div class="cert-group-title">Outras</div>
+                          <div class="cert-list">
+
+                            <a class="cert-item cert-link"
+                              href="https://www.credly.com/badges/895304d8-b8f1-4050-a68a-4edef94a5603/linked_in_profile"
+                              target="_blank" rel="noopener">
+                              PCEP – Certified Entry-Level Python Programmer
+                            </a>
+
+                            <a class="cert-item cert-link"
+                              href="https://bcr.bstqb.org.br/cert?field_certificado_nome_value=Tiago+Marques+Pereira&field_certificado_numero_value=+21-CTFL-10825-BR"
+                              target="_blank" rel="noopener">
+                              Certified Tester Foundation Level (CTFL)
+                            </a>
+
+                          </div>
+                        </div>
                 </div>
 
               </div>
